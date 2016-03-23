@@ -13,7 +13,7 @@
       <dependency id="Aerospike.Client" version="[3.1.1,4.0.0)" />
       <dependency id="Tavisca.Frameworks.Helper" version="[2.0.0.1,2.1.0.0)" />
       <dependency id="Tavisca.Frameworks.Parallel" version="[2.0.0.1,2.1.0.0)" />
-      <dependency id="Tavisca.Frameworks.Serialization" version="[2.0.0.1,2.1.0.0)" />
+      <dependency id="Tavisca.Frameworks.Serialization" version="[3.0.0.0,3.1.0.0)" />
       <dependency id="Tavisca.ServiceStack" version="[4.0.0.0,5.0.0.0)" />
     </dependencies>
   </metadata>
