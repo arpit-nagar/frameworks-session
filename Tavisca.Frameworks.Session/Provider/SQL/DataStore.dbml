@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dScepterDB" Class="DataStoreDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=dScepterDB;Integrated Security=True" SettingsObjectName="Tavisca.Scepter.Infrastructure.DataStore.Properties.Settings" SettingsPropertyName="dScepterDBConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.spAddEntry" Method="spAddEntry">
+    <Parameter Name="Category" Parameter="category" Type="System.String" DbType="NVarChar(64)" />
+    <Parameter Name="Key" Parameter="key" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="Value" Parameter="value" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
+    <Parameter Name="AddedOnUtc" Parameter="addedOnUtc" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ExpiresOnUtc" Parameter="expiresOnUtc" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spRemoveEntry" Method="spRemoveEntry">
+    <Parameter Name="Key" Parameter="key" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="Category" Parameter="category" Type="System.String" DbType="NVarChar(64)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spGetAllEntriesForKey" Method="spGetAllEntriesForKey">
+    <Parameter Name="Key" Parameter="key" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetAllEntriesForKeyResult">
+      <Column Name="ObjectKey" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Category" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="ObjectValue" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="AddedOnUTC" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ExpiresOnUTC" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetEntry" Method="spGetEntry">
+    <Parameter Name="Key" Parameter="key" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="Category" Parameter="category" Type="System.String" DbType="NVarChar(64)" />
+    <ElementType Name="spGetEntryResult">
+      <Column Name="ObjectKey" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Category" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="ObjectValue" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="AddedOnUTC" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ExpiresOnUTC" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spRemoveAllEntriesForKey" Method="spRemoveAllEntriesForKey">
+    <Parameter Name="Key" Parameter="key" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
