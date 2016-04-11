@@ -33,17 +33,12 @@ namespace Tavisca.Frameworks.Session.Provider.Redis
                 throw new ArgumentNullException("category");
 
             if (string.IsNullOrWhiteSpace(key))
-                throw new ArgumentNullException("key");
-
-            Guid sessionId;
-
-            if (!Guid.TryParse(key, out sessionId))
-                throw new ArgumentException(string.Format(SessionResources.Key_Not_Guid, SessionResources.ProviderName_Redis), "key");
+                throw new ArgumentNullException("key");          
 
             var session = new DataEntry
                 {
                     ObjectName = category,
-                    Id = sessionId,
+                    Id = key,
                     ObjectValue = GetFormatter().Format(value),
                     ExpiresOn = DateTime.UtcNow.Add(expireIn),
                     AddedOn = DateTime.UtcNow,
