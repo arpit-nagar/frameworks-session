@@ -7,7 +7,8 @@ namespace Tavisca.Frameworks.Session.DependencyInjection
     {
         private ServiceLocator()
         {
-
+            foreach (var registration in DefaultRegistrations.GetDefaultSet())
+                Registry[registration.Key] = registration.Value;
         }
 
         private readonly ConcurrentDictionary<Type, object> Registry 

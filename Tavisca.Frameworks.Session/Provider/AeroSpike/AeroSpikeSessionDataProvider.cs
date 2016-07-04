@@ -29,11 +29,6 @@ namespace Tavisca.Frameworks.Session.Provider.AeroSpike
                 return _client;
             }
         }
-        static AeroSpikeSessionDataProvider()
-        {
-            ServiceLocator.Default.RegisterCustomInstance(typeof(IAerospikeInstanceFactory),
-                DefaultAerospikeInstanceFactory.Instance);
-        }
 
         public AeroSpikeSessionDataProvider(string connStringNameOrValue, string applicationKey)
             : base(connStringNameOrValue)
@@ -150,9 +145,6 @@ namespace Tavisca.Frameworks.Session.Provider.AeroSpike
         {
             return new Key(_applicationKey, category, key);
         }
-
-        private static readonly ConcurrentDictionary<string, AerospikeClient> AerospikeClients =
-            new ConcurrentDictionary<string, AerospikeClient>();
 
         private AsyncClient GetNewClient()
         {
