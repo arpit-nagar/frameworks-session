@@ -12,6 +12,7 @@ namespace Tavisca.Frameworks.Session.Provider.AeroSpike
         private readonly string _applicationKey;
         protected string Host { get; set; }
         protected int Port { get; set; }
+        protected string Namespace { get; set; }
 
         private object _clientLock = new object();
         private AsyncClient _client;
@@ -126,7 +127,7 @@ namespace Tavisca.Frameworks.Session.Provider.AeroSpike
         {
             var split = connectionString.Split(':');
 
-            if (split.Length != 2)
+            if (split.Length != 3)
                 throw new SessionConfigurationException(string.Format(SessionResources.AeroSpike_IncorrectConnString,
                     connectionString));
 
@@ -138,11 +139,12 @@ namespace Tavisca.Frameworks.Session.Provider.AeroSpike
 
             Host = split[0];
             Port = port;
+            Namespace = split[2];
         }
 
         protected virtual Key GetKey(string category, string key)
         {
-            return new Key(_applicationKey, category, key);
+            return new Key(Namespace, category, key);
         }
 
         private AsyncClient GetNewClient()

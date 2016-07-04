@@ -16,7 +16,7 @@ namespace Tavisca.Frameworks.Session.Tests
         private const string AerospikeNamespace = "bar";
         private const string SqlConnString = "Tavisca.Frameworks.Session.Properties.Settings.dScepterDBConnectionString";
         private const string RedisConnString = "192.168.2.56";
-        private const string AeroSpikeConnString = "192.168.2.15:3000";
+        private const string AeroSpikeConnString = "192.168.2.15:3000:bar";
         private static readonly string DynamoDBConnString = ConfigurationManager.AppSettings["dynamoConnString"];
         
         [TestMethod, Priority(10)]
