@@ -36,8 +36,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AerospikeClient, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aerospike.Client.3.1.1\lib\net40\AerospikeClient.dll</HintPath>
+    <Reference Include="AerospikeClient, Version=3.2.0.0, Culture=neutral, PublicKeyToken=26e01ad6884636d6, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aerospike.Client.3.2.3\lib\net40\AerospikeClient.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="LZ4, Version=1.0.9.93, Culture=neutral, PublicKeyToken=62e1b5ec1eec9bdd, processorArchitecture=MSIL">

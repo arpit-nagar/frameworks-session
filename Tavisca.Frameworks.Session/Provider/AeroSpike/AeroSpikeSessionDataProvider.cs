@@ -89,7 +89,6 @@ namespace Tavisca.Frameworks.Session.Provider.AeroSpike
             var policy = new ClientPolicy
             {
                 failIfNotConnected = true,
-                maxThreads = Configuration.MaxAsyncThreads.HasValue ? Configuration.MaxAsyncThreads.Value : 5,
                 maxSocketIdle = 100000,
                 timeout = 30000
             };
