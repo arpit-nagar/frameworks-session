@@ -16,7 +16,7 @@ using Tavisca.Frameworks.Session.Resources;
 
 namespace Tavisca.Frameworks.Session.Configuration
 {
-    internal static class StorageProviderProvider
+    public static class StorageProviderProvider
     {
         public static ISessionDataProvider GetProvider(ISessionConfiguration configuration)
         {

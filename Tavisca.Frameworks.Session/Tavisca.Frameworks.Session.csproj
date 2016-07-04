@@ -128,6 +128,7 @@
     <Compile Include="Configuration\ISessionConfiguration.cs" />
     <Compile Include="Configuration\StorageProviderProvider.cs" />
     <Compile Include="Configuration\WritableSessionSettings.cs" />
+    <Compile Include="DependencyInjection\ServiceLocator.cs" />
     <Compile Include="Exceptions\SessionConfigurationException.cs" />
     <Compile Include="Exceptions\SessionException.cs" />
     <Compile Include="Formatters\BinaryFormatter.cs" />
@@ -149,6 +150,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Provider\AeroSpike\AeroSpikeSessionDataProvider.cs" />
+    <Compile Include="Provider\AeroSpike\DefaultInstanceFactory.cs" />
+    <Compile Include="Provider\AeroSpike\IAerospikeInstanceFactory.cs" />
     <Compile Include="Provider\DynamoDB\DynamoDBMeta.cs" />
     <Compile Include="Provider\DynamoDB\DynamoDBExpirer.cs" />
     <Compile Include="Provider\DynamoDB\DynamoDBSessionDataProvider.cs" />
