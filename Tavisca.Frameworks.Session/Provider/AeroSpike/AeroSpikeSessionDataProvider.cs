@@ -104,7 +104,7 @@ namespace Tavisca.Frameworks.Session.Provider.AeroSpike
         {
             return _writePolicy ?? (_writePolicy = new WritePolicy()
             {
-                expiration = Convert.ToInt32(Configuration.ExpiresIn.TotalMilliseconds),
+                expiration = Convert.ToInt32(Configuration.ExpiresIn.TotalSeconds),
                 maxRetries = 2,
                 priority = Priority.DEFAULT,
                 sleepBetweenRetries = 50
